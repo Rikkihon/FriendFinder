@@ -6,12 +6,6 @@ var friends = require("../app/data/friends");
 // ===============================================================================
 
 module.exports = function(app) {
-  // API GET Requests
-  // Below code handles when users "visit" a page.
-  // In each of the below cases when a user visits a link
-  // (ex: localhost:PORT/api/admin... they are shown a JSON of the data in the table)
-  // ---------------------------------------------------------------------------
-  //A GET route with the url /api/friends. This will be used to display a JSON of all possible friends.
   app.get("/api/friends", function(req, res) {
        console.log(friends)
        return res.json(friends);
@@ -49,20 +43,11 @@ module.exports = function(app) {
       console.log("name and score", userData.name, userData.scores[0]);
     
       console.log("This should be the user's data" + JSON.stringify(userData)); 
-    
+      function send(userData) {
       friends.push(userData);  
-    
+      }
+      send(userData)
       res.json({status: 'OK', matchName: friends.name, matchImage: friends.image});
   });
-  // ---------------------------------------------------------------------------
-  //  below code so you could clear out the table while working with the functionality.
   
-  app.post("/api/clear", function() {
-    // Empty out the arrays of data
-    friendData = [];
-    waitListData = [];
-
-    console.log(friendData);
-  
-  });
 };
