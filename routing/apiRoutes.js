@@ -7,7 +7,6 @@ var friends = require("../app/data/friends");
 
 module.exports = function(app) {
   app.get("/api/friends", function(req, res) {
-       console.log(friends)
        return res.json(friends);
   });
   // ---------------------------------------------------------------------------
@@ -43,10 +42,10 @@ module.exports = function(app) {
       console.log("name and score", userData.name, userData.scores[0]);
     
       console.log("This should be the user's data" + JSON.stringify(userData)); 
-      function send(userData) {
-      friends.push(userData);  
-      }
-      send(userData)
+      // function send(userData) {
+      // friends.push(userData);  
+      // }
+      // send(userData)
       res.json({status: 'OK', matchName: friends.name, matchImage: friends.image});
   });
   

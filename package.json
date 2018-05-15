@@ -1,7 +1,7 @@
 {
-  "name": "hotrestaurant",
-  "version": "1.0.1",
-  "description": "",
+  "name": "friendfinder",
+  "version": "1.0.0",
+  "description": "Helps you find a match on a friend website",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -251,7 +251,7 @@
   
   <script type="text/javascript">
     // Chosen CSS
-
+    var friends = [];
     var config = {
       ".chosen-select": {},
       ".chosen-select-deselect": {
@@ -313,8 +313,7 @@
           ]
         };
         $(document).ready(function() {
-			//$('select').material_select();
-			$('.modal').modal({
+			$(".modal1").modal({
 				dismissible: false, // Modal can be dismissed by clicking outside of the modal
 				opacity: .5, // Opacity of modal background
 				inDuration: 300, // Transition in duration
@@ -325,12 +324,11 @@
 		});
 			$.post('/api/friends', userData)
       		.done(function(data) {
-      			console.log('response = ' + JSON.stringify(data));
-    
+             friends.push(userData);
       			$('#userMatch').html(data.matchName);
 		      	$("#userMatchImage").attr("src", data.matchImage);
 	
-      			$('#modal1').modal('open');
+      			$('#modal1').modal("show");
       		});
 
         // AJAX post the data to the friends API.
@@ -352,3 +350,4 @@
 </body>
 </html>
 }
+`
